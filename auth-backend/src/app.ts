@@ -28,6 +28,10 @@ app.use(passport.initialize());
 app.use("/auth", authRoutes);
 app.use("/admin", adminRoutes);
 
+app.get("/", (_req, res) => {
+  res.json({ message: "Welcome to the Auth System API 🚀" });
+});
+
 app.get("/health", (_req, res) => {
   res.json({ status: "ok", message: "Auth API is running ✅" });
 });
